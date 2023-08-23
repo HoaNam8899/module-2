@@ -1,0 +1,30 @@
+.itemForHeade {
+    height: 100px;
+}
+
+.media-body p {
+    height: 38px;
+    line-height: 19px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-clamp: 2;
+}
+
+.carousel-item-margin {
+    margin: 0 10px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.edit-text {
+    line-height: 20px;
+    height: 20px;
+    overflow: hidden;
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}

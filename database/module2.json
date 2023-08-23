@@ -1,0 +1,288 @@
+{
+  "users": [
+    {
+      "fullName": "hy hoa nam 123",
+      "email": "nam@gmail.com",
+      "phone": "9092",
+      "username": "nam",
+      "password": "123",
+      "id": "8f1db81a-c4e8-4688-aca8-2931acd37ece",
+      "address": "Binh Duong",
+      "image": "https://firebasestorage.googleapis.com/v0/b/module-2-5ad74.appspot.com/o/imageUsers%2F0-1661182830-702-width740height555.jpg?alt=media&token=e9be0c4f-4dc2-4400-a1b0-06f27b02b1d9"
+    }
+  ],
+  "products": [
+    {
+      "name": "Cam vàng",
+      "image": "https://firebasestorage.googleapis.com/v0/b/module-2-5ad74.appspot.com/o/imageProducts%2Finstagram-img-03.jpg?alt=media&token=959a079d-4948-4299-8d43-7f7bf7c2b70e",
+      "description": "cam siêu ngọt",
+      "price": "49000",
+      "discount": "10",
+      "category": "fruit",
+      "status": "stocking",
+      "id": "f7875627-a990-4cac-b271-17553b3e7a8f"
+    },
+    {
+      "name": "Khoai tây",
+      "image": "https://firebasestorage.googleapis.com/v0/b/module-2-5ad74.appspot.com/o/imageProducts%2F10-mon-ngon-tu-khoai-tay-vua-ngon-vua-bo-202011301024410498.jpg?alt=media&token=a08f4a1e-f268-434f-9a3a-1465d0142c13",
+      "description": "khoai tây Đà Lạt",
+      "price": "12000",
+      "discount": "0",
+      "category": "vegetable",
+      "status": "stocking",
+      "id": "b9e3cd26-44b3-4e59-add6-ae0306ae1c98"
+    },
+    {
+      "name": "Cà rốt",
+      "image": "https://firebasestorage.googleapis.com/v0/b/module-2-5ad74.appspot.com/o/imageProducts%2Fca-rot-2275.jpg?alt=media&token=773d002e-1d89-4adb-b9c3-4637ec211b23",
+      "description": "Cà rốt Đà Lạt",
+      "price": "12000",
+      "discount": "1",
+      "category": "vegetable",
+      "status": "stocking",
+      "id": "e607373f-a35b-4f57-9d52-f2bb8ccb8ee5"
+    },
+    {
+      "name": "Hành tây",
+      "image": "https://firebasestorage.googleapis.com/v0/b/module-2-5ad74.appspot.com/o/imageProducts%2F20200719_014816_905375_dieu-tri-mun-trung-.max-1800x1800.jpg?alt=media&token=fa9af347-70c5-4bcf-9f37-50c204e7b23e",
+      "description": "Hành tây nhập khẩu",
+      "price": "10000",
+      "discount": "2",
+      "category": "vegetable",
+      "status": "stocking",
+      "id": "aa37fbc9-9404-41db-a51c-cf422e7bd06c"
+    },
+    {
+      "name": "Chuối vàng",
+      "image": "https://firebasestorage.googleapis.com/v0/b/module-2-5ad74.appspot.com/o/imageProducts%2F0-1661182830-702-width740height555.jpg?alt=media&token=58eadd36-f3fa-4d7a-9e30-8f798bcf9cdc",
+      "description": "Nhập khẩu",
+      "price": "12000",
+      "discount": "2",
+      "category": "fruit",
+      "status": "stocking",
+      "id": "976b39f5-7d71-4b31-b91d-236ceda71c7d"
+    },
+    {
+      "name": "Kiwi",
+      "image": "https://firebasestorage.googleapis.com/v0/b/module-2-5ad74.appspot.com/o/imageProducts%2Favatar1639700789953-16397007912601666782058-1639708606372-163970860760357750022.jpg?alt=media&token=97d08b99-9ac1-4403-8201-1bec74d6eab5",
+      "description": "Kiwi siêu ngọt",
+      "price": "40000",
+      "discount": "9",
+      "category": "fruit",
+      "status": "stocking",
+      "id": "419271be-d2c0-49e0-86ae-a92404aaa1d8"
+    },
+    {
+      "name": "Cà chua bi",
+      "image": "https://firebasestorage.googleapis.com/v0/b/module-2-5ad74.appspot.com/o/imageProducts%2Fgallery-img-02.jpg?alt=media&token=701f61cf-6682-4b88-b3a2-4399892e8904",
+      "description": "Cà chua Đà Lạt",
+      "price": "20000",
+      "discount": "1",
+      "category": "fruit",
+      "status": "stocking",
+      "id": "60622ab4-8802-49a3-8cb8-0655027f09d4"
+    },
+    {
+      "name": "Dưa chuột",
+      "image": "https://firebasestorage.googleapis.com/v0/b/module-2-5ad74.appspot.com/o/imageProducts%2Fgallery-img-01.jpg?alt=media&token=b15023a9-61d5-465a-af76-46fddcc1c1a6",
+      "description": "Dưa chuột ngon",
+      "price": "15000",
+      "discount": "2",
+      "category": "vegetable",
+      "status": "stocking",
+      "id": "e6782f66-a2cf-41cd-9208-e47d39398c20"
+    },
+    {
+      "name": "Cá ngừ đại dương",
+      "image": "https://firebasestorage.googleapis.com/v0/b/module-2-5ad74.appspot.com/o/imageProducts%2F3-cong-thuc-lam-salad-ca-ngu-cuc-don-gian-giau-dinh-duong-lam-nhanh-20.jpg?alt=media&token=c7bb8f65-bc8f-4230-ae0a-55c7aca512e7",
+      "description": "cá ngừ nhập khẩu",
+      "price": "56000",
+      "discount": "2",
+      "category": "fish",
+      "status": "stocking",
+      "id": "f7189b4d-7c49-4015-957e-826a189a13ad"
+    },
+    {
+      "name": "Cá sông ",
+      "image": "https://firebasestorage.googleapis.com/v0/b/module-2-5ad74.appspot.com/o/imageProducts%2Fca-dong-bao-nhieu-1kg-compressed.jpg?alt=media&token=559d02fa-df21-429a-829d-4913a58a3d2f",
+      "description": "cá tươi",
+      "price": "40000",
+      "discount": "2",
+      "category": "fish",
+      "status": "stocking",
+      "id": "932c75b3-195e-4706-a030-4828ea08d8e5"
+    },
+    {
+      "name": "Cua biển",
+      "image": "https://firebasestorage.googleapis.com/v0/b/module-2-5ad74.appspot.com/o/imageProducts%2Fkhong-so-chon-nham-cua-op-voi-cach-chon-cua-cua-dan-bien-nay-202201101330304953.jpg?alt=media&token=9c2b35ec-4ead-4503-8cb9-1bd1dcd385ba",
+      "description": "Cua biển tươi ngon",
+      "price": "99000",
+      "discount": "10",
+      "category": "fish",
+      "status": "stocking",
+      "id": "c0f12731-a857-4a45-bd9b-c44483c251b7"
+    },
+    {
+      "name": "Cá diêu hồng",
+      "image": "https://firebasestorage.googleapis.com/v0/b/module-2-5ad74.appspot.com/o/imageProducts%2Fca-dieu-hong-nguyen-con_31122016103349.jpg?alt=media&token=91fe616f-4cac-45b2-8693-fdbdc607b218",
+      "description": "cá lồng bè",
+      "price": "25000",
+      "discount": "30",
+      "category": "fish",
+      "status": "stocking",
+      "id": "30691b91-6a9a-4d30-9180-bd90f6eab364"
+    },
+    {
+      "name": "cá ngừ nguyên con",
+      "image": "https://firebasestorage.googleapis.com/v0/b/module-2-5ad74.appspot.com/o/imageProducts%2Fca-ngu-dai-duong.jpg?alt=media&token=b3fc21fd-a546-4afc-8fbd-e88269e022de",
+      "description": "Cá ngừ tươi",
+      "price": "42000",
+      "discount": "2",
+      "category": "fish",
+      "status": "stocking",
+      "id": "a70aae0c-446d-4331-b084-b923cefddede"
+    },
+    {
+      "name": "Mực ống",
+      "image": "https://firebasestorage.googleapis.com/v0/b/module-2-5ad74.appspot.com/o/imageProducts%2Fmuc-ong-nho.png?alt=media&token=b6e31324-09ae-4d99-b364-9e2b7798e43e",
+      "description": "Mực ống Vũng Tàu",
+      "price": "178000",
+      "discount": "4",
+      "category": "fish",
+      "status": "stocking",
+      "id": "43b52e8b-9d39-4175-a685-b833c5668405"
+    },
+    {
+      "name": "Ốc biển",
+      "image": "https://firebasestorage.googleapis.com/v0/b/module-2-5ad74.appspot.com/o/imageProducts%2Fdanh-sach-cac-loai-oc-bien-oc-nuoc-ngot-va-oc-doc-tai-viet-nam-202108041636109540.jpg?alt=media&token=91727a22-e1b4-4c5c-bacf-832c4afc1db0",
+      "description": "ốc biển ngon",
+      "price": "257000",
+      "discount": "20",
+      "category": "fish",
+      "status": "stocking",
+      "id": "573bb344-151c-4255-abde-0fce5afb9047"
+    },
+    {
+      "name": "Thịt thăn bò",
+      "image": "https://firebasestorage.googleapis.com/v0/b/module-2-5ad74.appspot.com/o/imageProducts%2F20191112_133540_928947_thit-bo.max-1800x1800.png?alt=media&token=53522fa2-f026-45e8-8e0a-1af045b1b4d8",
+      "description": "Thịt bò nhập khẩu",
+      "price": "389000",
+      "discount": "20",
+      "category": "meat",
+      "status": "stocking",
+      "id": "3d39e12a-b870-40c5-a881-0db1e9e30823"
+    },
+    {
+      "name": "Đùi gà",
+      "image": "https://firebasestorage.googleapis.com/v0/b/module-2-5ad74.appspot.com/o/imageProducts%2F1587869941-1b94c14bf0ae1068acab08551fac32f9.jpg?alt=media&token=86a03e3a-b62a-4264-9a98-4e3a29067716",
+      "description": "Đùi gà Việt Nam",
+      "price": "56000",
+      "discount": "10",
+      "category": "meat",
+      "status": "stocking",
+      "id": "18c12c3e-985d-4065-a58b-37acae4a588a"
+    },
+    {
+      "name": "Thịt bò gân",
+      "image": "https://firebasestorage.googleapis.com/v0/b/module-2-5ad74.appspot.com/o/imageProducts%2Fgan-bo-nau-gi-ngon.jpg?alt=media&token=f6aa1837-63dd-4099-a5bc-276c9d55a8e7",
+      "description": "Thịt bò tươi ",
+      "price": "89000",
+      "discount": "4",
+      "category": "meat",
+      "status": "stocking",
+      "id": "a4c2b627-01c2-4ad6-9419-890675241094"
+    },
+    {
+      "name": "Sườn non",
+      "image": "https://firebasestorage.googleapis.com/v0/b/module-2-5ad74.appspot.com/o/imageProducts%2Fsuon-non-dong-lanh-1.jpg?alt=media&token=c1919795-5eeb-4395-91f5-b85b8138bbbf",
+      "description": "Nhập khẩu ",
+      "price": "78000",
+      "discount": "20",
+      "category": "meat",
+      "status": "stocking",
+      "id": "a0b8ba90-3305-46e8-aeb4-e73f44450ca0"
+    },
+    {
+      "name": "Thịt cừu Thịt cừu Thịt cừu Thịt cừu Thịt cừu Thịt cừu",
+      "image": "https://firebasestorage.googleapis.com/v0/b/module-2-5ad74.appspot.com/o/imageProducts%2Ft%E1%BA%A3i%20xu%E1%BB%91ng%20(1).jpg?alt=media&token=2c64dcfa-fb61-40c4-90d2-7fd3d78ae080",
+      "description": "nhập khẩu",
+      "price": "345000",
+      "discount": "28",
+      "category": "meat",
+      "status": "stocking",
+      "id": "9a891456-0efe-4fd9-92b4-840fd1e8e313"
+    }
+  ],
+  "orders": [
+    {
+      "userId": "8f1db81a-c4e8-4688-aca8-2931acd37ece",
+      "billId": "13a0297b-94d5-4f03-8773-471eddfea469",
+      "date": "16:08:11 23/8/2023",
+      "cart": [
+        {
+          "name": "Cà rốt",
+          "image": "https://firebasestorage.googleapis.com/v0/b/module-2-5ad74.appspot.com/o/imageProducts%2Fca-rot-2275.jpg?alt=media&token=773d002e-1d89-4adb-b9c3-4637ec211b23",
+          "description": "Cà rốt Đà Lạt",
+          "price": "12000",
+          "discount": "1",
+          "category": "vegetable",
+          "status": "stocking",
+          "id": "e607373f-a35b-4f57-9d52-f2bb8ccb8ee5",
+          "qty": 10
+        },
+        {
+          "name": "Cá ngừ đại dương",
+          "image": "https://firebasestorage.googleapis.com/v0/b/module-2-5ad74.appspot.com/o/imageProducts%2F3-cong-thuc-lam-salad-ca-ngu-cuc-don-gian-giau-dinh-duong-lam-nhanh-20.jpg?alt=media&token=c7bb8f65-bc8f-4230-ae0a-55c7aca512e7",
+          "description": "cá ngừ nhập khẩu",
+          "price": "56000",
+          "discount": "2",
+          "category": "fish",
+          "status": "stocking",
+          "id": "f7189b4d-7c49-4015-957e-826a189a13ad",
+          "qty": 2
+        },
+        {
+          "name": "Cá sông ",
+          "image": "https://firebasestorage.googleapis.com/v0/b/module-2-5ad74.appspot.com/o/imageProducts%2Fca-dong-bao-nhieu-1kg-compressed.jpg?alt=media&token=559d02fa-df21-429a-829d-4913a58a3d2f",
+          "description": "cá tươi",
+          "price": "40000",
+          "discount": "2",
+          "category": "fish",
+          "status": "stocking",
+          "id": "932c75b3-195e-4706-a030-4828ea08d8e5",
+          "qty": 5
+        },
+        {
+          "name": "Kiwi",
+          "image": "https://firebasestorage.googleapis.com/v0/b/module-2-5ad74.appspot.com/o/imageProducts%2Favatar1639700789953-16397007912601666782058-1639708606372-163970860760357750022.jpg?alt=media&token=97d08b99-9ac1-4403-8201-1bec74d6eab5",
+          "description": "Kiwi siêu ngọt",
+          "price": "40000",
+          "discount": "9",
+          "category": "fruit",
+          "status": "stocking",
+          "id": "419271be-d2c0-49e0-86ae-a92404aaa1d8",
+          "qty": 1
+        }
+      ],
+      "status": "đang xử lý",
+      "total": 460960,
+      "currentUser": {
+        "fullName": "hy hoa nam 123",
+        "email": "nam@gmail.com",
+        "phone": "9092",
+        "username": "nam",
+        "password": "123",
+        "id": "8f1db81a-c4e8-4688-aca8-2931acd37ece",
+        "address": "Binh Duong",
+        "image": "https://firebasestorage.googleapis.com/v0/b/module-2-5ad74.appspot.com/o/imageUsers%2F0-1661182830-702-width740height555.jpg?alt=media&token=e9be0c4f-4dc2-4400-a1b0-06f27b02b1d9"
+      },
+      "id": 1
+    }
+  ],
+  "admin": [
+    {
+      "admin": "admin",
+      "password": "admin"
+    }
+  ]
+}
