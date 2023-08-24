@@ -30,4 +30,14 @@ export const productApi = {
         return response.data
     },
 
+    sortStock: async (data) => {
+        let response = await http.get(`products?status=${data}`);
+        return response.data
+    },
+    sortCategory: async (data) => {
+        let response = await http.get(`products?category=${data}`);
+        return response.data
+    },
+
+
 }

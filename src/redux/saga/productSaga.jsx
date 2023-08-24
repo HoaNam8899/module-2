@@ -59,7 +59,7 @@ export const productSaga = {
             let product = carts.findIndex(x => x.id == data.payload);
             carts.splice(product, 1);
             localStorage.setItem('carts', JSON.stringify(carts));
-            yield put(productAction.getCart(carts))
+            yield put({ type: 'GET_PRODUCT_FOR_CART' })
         } catch (err) {
             yield put()
         }
@@ -68,13 +68,14 @@ export const productSaga = {
         try {
             let carts = JSON.parse(localStorage.getItem('carts')) || [];
             let product = carts.find(x => x.id == data.payload[1]);
-            if (data.payload[0] <= 0) {
-                product.qty = 1
+            if (data.payload[0] == 0) {
+                product.qty > 1 ? product.qty -= 1 : product.qty = 1
+
             } else {
-                product.qty = parseInt(data.payload[0])
+                product.qty += 1
             }
             localStorage.setItem('carts', JSON.stringify(carts));
-            yield put(productAction.getCart(carts))
+            yield put({ type: 'GET_PRODUCT_FOR_CART' })
         } catch (err) {
             yield put()
         }
@@ -88,6 +89,15 @@ export const productSaga = {
             yield put()
         }
     },
+    getProductForCart: function* () {
+        try {
+            let carts = JSON.parse(localStorage.getItem('carts')) || [];
+            yield put(productAction.getCart(carts))
+        } catch (err) {
+            yield put()
+        }
+    },
+    ///////////////////////
     userOrder: function* (data) {
         try {
             let currentUser = data.payload[1]
@@ -162,5 +172,28 @@ export const productSaga = {
             yield put()
         }
     },
-    // addProductDetail
+    // sort 
+    sortProduct: function* (data) {
+        try {
+
+            if (data.payload === 'non') {
+                yield put({ type: 'GET_ALL_PRODUCT' })
+            } else if (data.payload === 'stocking' || data.payload === 'out of stock') {
+                var response = yield call(productApi.sortStock, data.payload);
+            } else {
+                var response = yield call(productApi.sortCategory, data.payload);
+            }
+            yield put(productAction.getAllProductSuccess(response));
+        } catch (err) {
+            yield put()
+        }
+    },
+    searchProduct: function* (data) {
+        try {
+            yield put(productAction.getAllProductSuccess(data.payload));
+            console.log(data.payload)
+        } catch (err) {
+            yield put()
+        }
+    },
 }

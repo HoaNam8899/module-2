@@ -118,4 +118,13 @@ export const userSaga = {
             yield put()
         }
     },
+
+    searchUser: function* (data) {
+        try {
+
+            yield put(userAction.resultGetAllUser(data.payload));
+        } catch (err) {
+            yield put()
+        }
+    },
 }

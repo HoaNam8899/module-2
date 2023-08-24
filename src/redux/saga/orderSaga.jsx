@@ -29,4 +29,11 @@ export const orderSaga = {
             yield put()
         }
     },
+    searchOrder: function* (data) {
+        try {
+            yield put(orderAction.getAllOrder(data.payload))
+        } catch (err) {
+            yield put()
+        }
+    },
 }

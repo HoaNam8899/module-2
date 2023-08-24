@@ -21,9 +21,86 @@ export const Order = () => {
         console.log(e.target.value, productId, billId)
         dispatch({ type: 'CHANGE_QTY', payload: [e.target.value, productId, billId] })
     }
+
+    // search
+    const [selected, setSelected] = useState()
+    const handleSelect = (e) => {
+        setSelected(e.target.value)
+    }
+    const handleSearch = (e) => {
+        if (e.target.value == '') {
+            dispatch({ type: 'GET_ALL_ORDER' })
+        } else {
+            if (selected == 'fullName') {
+                var resultSearch = [...allOrder].filter(x => toSlug(x.currentUser.fullName).indexOf(toSlug(e.target.value)) >= 0)
+            } else if (selected == 'phone') {
+                var resultSearch = [...allOrder].filter(x => toSlug(x.currentUser.phone).indexOf(toSlug(e.target.value)) >= 0)
+            } else if (selected == 'email') {
+                var resultSearch = [...allOrder].filter(x => toSlug(x.currentUser.email).indexOf(toSlug(e.target.value)) >= 0)
+            } else if (selected == 'address') {
+                var resultSearch = [...allOrder].filter(x => toSlug(x.currentUser.address).indexOf(toSlug(e.target.value)) >= 0)
+            } else if (selected == 'date') {
+                var resultSearch = [...allOrder].filter(x => x.date.split(' ')[1].indexOf(e.target.value) >= 0)
+            }
+            else {
+                dispatch({ type: 'GET_ALL_ORDER' })
+            }
+            dispatch({ type: 'SEARCH_ORDER', payload: resultSearch })
+        }
+    }
+
+    // compare vn string
+    function toSlug(str) {
+        // Chuyển hết sang chữ thường
+        str = str.toLowerCase();
+        // xóa dấu
+        str = str
+            .normalize('NFD') // chuyển chuỗi sang unicode tổ hợp
+            .replace(/[\u0300-\u036f]/g, ''); // xóa các ký tự dấu sau khi tách tổ hợp
+        // Thay ký tự đĐ
+        str = str.replace(/[đĐ]/g, 'd');
+        // Xóa ký tự đặc biệt
+        str = str.replace(/([^0-9a-z-\s])/g, '');
+        // Xóa khoảng trắng thay bằng ký tự -
+        str = str.replace(/(\s+)/g, '-');
+        // Xóa ký tự - liên tiếp
+        str = str.replace(/-+/g, '-');
+        // xóa phần dư - ở đầu & cuối
+        str = str.replace(/^-+|-+$/g, '');
+        // return
+        return str;
+    }
     return (
         <>
+            <div style={{ paddingBottom: '25px', borderBottom: '1px solid #000' }}>
+
+                <span style={{ margin: '0 10px 0 20px' }}>Search by: </span>
+                <select
+                    style={{
+                        width: '120px',
+                        height: '36px',
+                        borderRadius: '4px'
+                    }}
+                    onChange={(value) => handleSelect(value)}
+                >
+                    <option value="" selected disabled hidden >Choose</option>
+                    <option value="non" >Non</option>
+                    <option value="fullName">fullname</option>
+                    <option value="phone">phone</option>
+                    <option value="email">email</option>
+                    <option value="address">address</option>
+                    <option value="date">date</option>
+                </select>
+                {
+                    selected == 'non' ? <input type="text" onChange={e => handleSearch(e)} style={{ margin: '0 0 0 10px' }} placeholder='non...' readOnly />
+                        :
+                        <input type="text" onChange={e => handleSearch(e)} style={{ margin: '0 0 0 10px' }} placeholder='type here...' />
+                }
+            </div>
+
+
             {
+
                 allOrder == undefined ? <h1>no orders</h1> :
                     allOrder.map((p, index) => <div key={index} className='container' style={{ padding: '25px 0', borderBottom: '1px solid #000' }}>
                         <div className='row'>

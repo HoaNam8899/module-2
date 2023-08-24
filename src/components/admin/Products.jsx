@@ -136,11 +136,81 @@ export const Products = () => {
     const handleDelete = (id) => {
         dispatch({ type: 'DELETE_PRODUCT', payload: id })
     }
+
+    // sort
+    const [sortProduct, setSortProduct] = useState()
+    const handleSort = (value) => {
+        setSortProduct(value)
+    }
+    const handleSortBy = () => {
+        dispatch({ type: 'SORT_PRODUCT', payload: sortProduct })
+    }
+    // search
+    const handleSearch = (e) => {
+
+        if (e.target.value == '') {
+            dispatch({ type: 'GET_ALL_PRODUCT' })
+        } else {
+            // let result = [...products].filter(x => x.name.toLocaleLowerCase().indexOf(e.target.value) >= 0)
+            let result = [...products].filter(x => toSlug(x.name).indexOf(toSlug(e.target.value)) >= 0)
+            // console.log(result)
+            dispatch({ type: 'SEARCH_PRODUCT', payload: result })
+        }
+    }
+
+    // compare vn string
+    function toSlug(str) {
+        // Chuyển hết sang chữ thường
+        str = str.toLowerCase();
+        // xóa dấu
+        str = str
+            .normalize('NFD') // chuyển chuỗi sang unicode tổ hợp
+            .replace(/[\u0300-\u036f]/g, ''); // xóa các ký tự dấu sau khi tách tổ hợp
+        // Thay ký tự đĐ
+        str = str.replace(/[đĐ]/g, 'd');
+        // Xóa ký tự đặc biệt
+        str = str.replace(/([^0-9a-z-\s])/g, '');
+        // Xóa khoảng trắng thay bằng ký tự -
+        str = str.replace(/(\s+)/g, '-');
+        // Xóa ký tự - liên tiếp
+        str = str.replace(/-+/g, '-');
+        // xóa phần dư - ở đầu & cuối
+        str = str.replace(/^-+|-+$/g, '');
+        // return
+        return str;
+    }
+
     return (
         <>
             <Button type="primary" onClick={showModal}>
                 Add new
             </Button>
+            <span style={{ margin: '0 10px 0 20px' }}>Sort by: </span>
+            <Select
+                style={{ width: 120 }}
+                onChange={(value) => handleSort(value)}
+            >
+                <Select.Option value="non">Non</Select.Option>
+                <Select.Option value="vegetable">Vegetable</Select.Option>
+                <Select.Option value="fruit">Fruit</Select.Option>
+                <Select.Option value="meat">Meat</Select.Option>
+                <Select.Option value="fish">Fish</Select.Option>
+                <Select.Option value="frozen">Frozen</Select.Option>
+                <Select.Option value="package">Package</Select.Option>
+                <Select.Option value="stocking">Stocking</Select.Option>
+                <Select.Option value="out of stock">Out of Stock</Select.Option>
+            </Select>
+            <Button type="primary" style={{ margin: '0 30px 0 10px' }} onClick={() => handleSortBy()}>
+                Sort
+            </Button>
+
+            <span>Search: </span>
+            <input type="text" onChange={e => handleSearch(e)} />
+            {/* <Button type="primary" style={{ margin: '0 30px 0 10px' }} >
+                Search
+            </Button> */}
+            <br />
+            <br />
             <Table
                 columns={columns}
                 dataSource={products}

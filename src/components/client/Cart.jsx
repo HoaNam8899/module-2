@@ -1,9 +1,15 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 export const Cart = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
+
+    //
+    useEffect(() => {
+        dispatch({ type: 'GET_PRODUCT_FOR_CART' })
+    }, [])
 
     // cart
     const cart = useSelector(p => p.product.cart)
@@ -13,12 +19,16 @@ export const Cart = () => {
     let total = cart.map(e => (parseInt(e.price) - parseInt(e.price) * parseInt(e.discount) / 100) * parseInt(e.qty)).reduce((a, b) => a + b, 0)
     // delete
     const hanldeDelete = (id) => {
-        console.log("delete", id)
         dispatch({ type: "DELETE_PRODUCT_CART", payload: id })
     }
     // change qty
-    const handleChangeQty = (e, id) => {
-        dispatch({ type: 'CHANGE_QTY_CART', payload: [e.target.value, id] })
+    const handleChangeQtyC = (e, id) => {
+        e.preventDefault()
+        dispatch({ type: 'CHANGE_QTY_CART', payload: [0, id] })
+    }
+    const handleChangeQtyT = (e, id) => {
+        e.preventDefault()
+        dispatch({ type: 'CHANGE_QTY_CART', payload: [1, id] })
     }
 
     //
@@ -67,10 +77,10 @@ export const Cart = () => {
                                                     <thead>
                                                         <tr>
                                                             <th width="10%" />
-                                                            <th>Products</th>
+                                                            <th width="20%">Products</th>
                                                             <th>Price</th>
-                                                            <th width="15%">Change Qty</th>
-                                                            <th>Subtotal</th>
+                                                            <th width="25%">Change Qty</th>
+                                                            <th width="20%">Subtotal</th>
                                                             <th />
                                                         </tr>
                                                     </thead>
@@ -93,15 +103,27 @@ export const Cart = () => {
                                                                         <small>-{p.discount}%</small>
                                                                     </td>
                                                                     <td>
-                                                                        <input
+                                                                        {/* <input
                                                                             className="vertical-spin"
                                                                             type="text"
                                                                             data-bts-button-down-class="btn btn-primary"
                                                                             data-bts-button-up-class="btn btn-primary"
-                                                                            defaultValue=""
+                                                                            placeholder=''
                                                                             name="vertical-spin"
                                                                             onChange={(e) => handleChangeQty(e, p.id)}
-                                                                        />
+                                                                        /> */}
+                                                                        <span className='d-flex align-items-center' style={{ with: '40%' }}>
+                                                                            <button
+                                                                                style={{ fontSize: '20px', background: '#f9d6d6', padding: '0 12px', borderRadius: '50%', cursor: 'pointer', outline: 'none', border: 'none' }}
+                                                                                onClick={(e) => handleChangeQtyC(e, p.id)}
+                                                                            >-</button>
+                                                                            <span style={{ margin: '0 10px', fontSize: '15px', width: '20%', textAlign: 'center' }}>{p.qty}</span>
+                                                                            <button
+                                                                                style={{ fontSize: '20px', background: '#f9d6d6', padding: '0 9px', borderRadius: '50%', cursor: 'pointer', outline: 'none', border: 'none' }}
+                                                                                onClick={(e) => handleChangeQtyT(e, p.id)}
+                                                                            >+</button>
+
+                                                                        </span>
                                                                     </td>
                                                                     <td>
                                                                         {new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format((parseInt(p.price) - parseInt(p.price * p.discount / 100)) * p.qty)}

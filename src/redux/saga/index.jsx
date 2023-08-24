@@ -16,6 +16,7 @@ export const rootSaga = function* () {
         takeLatest("LOGOUT", userSaga.logout),
         takeLatest("UPDATE_USER_FROM_CHECKOUT", userSaga.updateUserFromCheckout),
         takeLatest("GET_ADMIN", userSaga.getAdmin),
+        takeLatest("SEARCH_USER", userSaga.searchUser),
 
 
 
@@ -32,11 +33,15 @@ export const rootSaga = function* () {
         takeLatest("GET_ORDERS", productSaga.getOrder),
         takeLatest("PRODUCT_DETAIL", productSaga.productDetail),
         takeLatest("ADD_PRODUCT_FROM_DETAIL", productSaga.addProductDetail),
+        takeLatest("SORT_PRODUCT", productSaga.sortProduct),
+        takeLatest("SEARCH_PRODUCT", productSaga.searchProduct),
+        takeLatest("GET_PRODUCT_FOR_CART", productSaga.getProductForCart),
 
         // order
         takeLatest("GET_ALL_ORDER", orderSaga.getAllOrder),
         takeLatest("CHANGE_STATUS", orderSaga.changeStatus),
         takeLatest("CHANGE_QTY", orderSaga.changeQty),
+        takeLatest("SEARCH_ORDER", orderSaga.searchOrder),
 
     ])
 }

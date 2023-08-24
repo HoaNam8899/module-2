@@ -9,7 +9,6 @@ export const Checkout = () => {
     const cart = useSelector(p => p.product.cart)
     // current user
     const currentUser = useSelector(u => u.user.currentUser)
-    console.log('check', currentUser)
     const [changeInfo, setChangeInfo] = useState(currentUser)
     // ship 
     const ship = 15000;
