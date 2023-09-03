@@ -95,19 +95,19 @@ export const Detail = () => {
                                     </div>
                                 </div>
                                 <div className="row">
-                                    <div className="col-sm-6">
+                                    <div className="col-sm-6 col-md-6 col-lg-6">
                                         <button className="mt-3 btn btn-primary btn-lg" onClick={(e) => handleAddToCart(e)}>
                                             <i className="fa fa-shopping-basket" /> Add to Cart
                                         </button>
                                     </div>
-                                    <div className="col-sm-6">
+                                </div>
+                                <div className="row mb-3">
+                                    <div className="col-sm-6 col-md-6 col-lg-6">
                                         <button className="mt-3 btn btn-primary btn-lg" onClick={() => navigate('/shop')}>
-                                            Continue Shopping
+                                            Containue Shopping
                                         </button>
                                     </div>
                                 </div>
-
-
                             </div>
                         </div>
                     </div>

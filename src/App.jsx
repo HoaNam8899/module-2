@@ -122,7 +122,6 @@ function App() {
 
       <Routes>
         <Route path='/' element={<Client />}>
-          {/* <Route index element={<Home />} /> */}
           <Route index element={<Home />} />
           <Route path='contact' element={<Contact />} />
           <Route path='about' element={<About />} />

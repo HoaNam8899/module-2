@@ -77,7 +77,7 @@ export const Login = () => {
                                                         Remember Me?{" "}
                                                     </label>
                                                 </div>
-                                                <a className="text-light">
+                                                <a className="text-light" style={{cursor:'pointer'}}>
                                                     <i className="fa fa-bell" /> Forgot password?
                                                 </a>
                                             </div>

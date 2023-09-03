@@ -24,7 +24,9 @@ export const Register = () => {
     const [confirmPassword, setConfirm] = useState({
         confirm: ''
     })
-    const handleRegister = async (e) => {
+    const [isChecked, setIsChecked] = useState()
+
+    const handleRegister = (e) => {
         e.preventDefault();
         if ((register.fullName == '') || (register.email == '') || (register.phone == '') || (register.username == '') || (register.password == '')) {
             confirm('Vui lòng nhập đủ thông tin!')
@@ -34,7 +36,10 @@ export const Register = () => {
             confirm('Email đã được đăng kí')
         } else if (check.username) {
             confirm('Tên đăng nhập đã tồn tại')
-        } else {
+        } else if (isChecked != true) {
+            confirm('Vui lòng chấp nhận điều khoản và dịch vụ')
+        } 
+        else {
             dispatch({ type: 'ADD_USER', payload: register })
             navigate('/login')
         }
@@ -148,7 +153,7 @@ export const Register = () => {
                                         <div className="form-group row">
                                             <div className="col-md-12">
                                                 <div className="checkbox">
-                                                    <input id="checkbox0" type="checkbox" name="terms" />
+                                                    <input id="checkbox0" type="checkbox" name="terms" onChange={e => setIsChecked(e.target.checked)}/>
                                                     <label htmlFor="checkbox0" className="mb-0">
                                                         I Agree with{" "}
                                                         <a href="terms.html" className="text-light">

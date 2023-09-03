@@ -1,12 +1,12 @@
 import React from 'react'
-import { useEffect } from 'react'
+// import { useEffect } from 'react'
 import { useState } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { loadLink } from '../../loadJS/helper'
-import { loadScripts } from '../../loadJS/helper'
-
-import { Button, Space, Table, Modal, Form, Input, Select } from 'antd';
+// import { loadLink } from '../../loadJS/helper'
+// import { loadScripts } from '../../loadJS/helper'
+// import Carousel from 'react-multi-carousel';
+import { Button, Modal, Form, Input } from 'antd';
 export const Client = () => {
 
 
@@ -100,12 +100,12 @@ export const Client = () => {
                                 {
                                     currentUser.length == 0 ?
                                         <>
-                                            <li className="nav-item">
+                                            <li className="nav-item ">
                                                 <a onClick={() => navigate('/register')} className="nav-link" style={{ cursor: 'pointer' }}>
                                                     Register
                                                 </a>
                                             </li>
-                                            <li className="nav-item">
+                                            <li className="nav-item ">
                                                 <a onClick={() => navigate('/login')} className="nav-link" style={{ cursor: 'pointer' }}>
                                                     Login
                                                 </a>
@@ -113,17 +113,17 @@ export const Client = () => {
                                         </>
                                         :
                                         <>
-                                            <li className="nav-item">
+                                            <li className="nav-item not-display">
                                                 <a onClick={() => navigate('/about')} className="nav-link" style={{ cursor: 'pointer' }}>
                                                     About
                                                 </a>
                                             </li>
-                                            <li className="nav-item">
+                                            <li className="nav-item not-display">
                                                 <a onClick={() => navigate('/faq')} className="nav-link" style={{ cursor: 'pointer' }}>
                                                     Q & A
                                                 </a>
                                             </li>
-                                            <li className="nav-item">
+                                            <li className="nav-item not-display">
                                                 <a onClick={() => navigate('/contact')} className="nav-link" style={{ cursor: 'pointer' }}>
                                                     Contact
                                                 </a>

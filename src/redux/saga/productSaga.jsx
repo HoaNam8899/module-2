@@ -191,7 +191,7 @@ export const productSaga = {
     searchProduct: function* (data) {
         try {
             yield put(productAction.getAllProductSuccess(data.payload));
-            console.log(data.payload)
+            // console.log(data.payload)
         } catch (err) {
             yield put()
         }

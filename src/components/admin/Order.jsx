@@ -5,7 +5,6 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 export const Order = () => {
     const dispatch = useDispatch()
-    // initial users
     // lay tat ca user
     useEffect(() => {
         dispatch({ type: "GET_ALL_ORDER" });

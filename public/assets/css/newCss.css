@@ -13,6 +13,7 @@
 
 .carousel-item-margin {
     margin: 0 10px;
+    /* width: 100%; */
 }
 
 html {
@@ -27,4 +28,10 @@ html {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
+}
+
+@media only screen and (max-width: 1023px) {
+    .not-display {
+        display: none;
+    }
 }
