@@ -1,20 +1,25 @@
-import React from 'react'
+import locale from 'antd/es/date-picker/locale/en_US'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 export const Login = () => {
+    useEffect(() => {
+        dispatch({type: 'GET_ALL_USER'})
+    }, [])
     const navigate = useNavigate()
-    // lấy tất cả user về để kiểm tra
+    // 
     const dispatch = useDispatch()
-
+    //
     const currentUser = useSelector(u => u.user.currentUser)
     // all user
     const allUser = useSelector(u => u.user.allUser)
-
+    
     const [login, setlogin] = useState({})
+    const [isChecked, setIsChecked] = useState()
     const handleLogin = (e) => {
         e.preventDefault();
-        let result = [...allUser].filter(x => x.username == login.username && x.password == login.password);
+        var result = [...allUser].filter(x => x.username == login.username && x.password == login.password);
         if (result.length > 0) {
             dispatch({ type: 'CURRENT_USER', payload: result[0] })
             navigate('/')
@@ -45,6 +50,7 @@ export const Login = () => {
                                                     type="text"
                                                     required=""
                                                     placeholder="Username"
+                                                    // defaultValue={localUser.username}
                                                     onChange={(e) => {
                                                         e.preventDefault();
                                                         setlogin({ ...login, username: e.target.value });
@@ -61,6 +67,7 @@ export const Login = () => {
                                                     type="password"
                                                     required=""
                                                     placeholder="Password"
+                                                    // defaultValue={localUser.password}
                                                     onChange={(e) => {
                                                         e.preventDefault();
                                                         setlogin({ ...login, password: e.target.value })
@@ -71,7 +78,7 @@ export const Login = () => {
                                         <div className="form-group row">
                                             <div className="col-md-12 d-flex justify-content-between align-items-center">
                                                 <div className="checkbox">
-                                                    <input id="checkbox0" type="checkbox" name="remember" />
+                                                    <input id="checkbox0" type="checkbox" name="remember" onChange={e => setIsChecked(e.target.checked)}/>
                                                     <label htmlFor="checkbox0" className="mb-0">
                                                         {" "}
                                                         Remember Me?{" "}

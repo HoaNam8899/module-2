@@ -17,7 +17,8 @@ export const Checkout = () => {
     let total = cart.map(e => (parseInt(e.price) - parseInt(e.price) * parseInt(e.discount) / 100) * parseInt(e.qty)).reduce((a, b) => a + b, 0)
     // proceed
     const handleProceed = () => {
-        if (changeInfo.fullName == undefined || changeInfo.address == undefined || changeInfo.phone == undefined) {
+        console.log(changeInfo.fullName, changeInfo.address, changeInfo.phone)
+        if (!changeInfo.fullName || !changeInfo.address || !changeInfo.phone) {
             confirm('Vui lòng cập nhật thông tin khách hàng')
         } else {
             dispatch({ type: 'USER_ORDER', payload: [currentUser.id, changeInfo] })

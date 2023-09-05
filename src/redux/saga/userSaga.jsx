@@ -67,6 +67,7 @@ export const userSaga = {
             yield put()
         }
     },
+
     getAllUser: function* () {
         try {
             let data = yield call(userApi.getAllUser);
@@ -123,6 +124,15 @@ export const userSaga = {
         try {
 
             yield put(userAction.resultGetAllUser(data.payload));
+        } catch (err) {
+            yield put()
+        }
+    },
+
+    getLocalUser: function* () {
+        try {
+            let user = JSON.parse(localStorage.getItem('user')) || [];
+            yield put(userAction.getLocalUser(user));
         } catch (err) {
             yield put()
         }

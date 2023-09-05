@@ -28,7 +28,7 @@ export const ItemProduct = (props) => {
         navigate('/detail');
     }
     return (
-        <div className="item" key={props.index}>
+        <div className="item">
             <div className="card card-product">
                 <div className="card-ribbon">
                     <div className="card-ribbon-container right">

@@ -148,8 +148,8 @@ export const Order = () => {
                                             p.cart == undefined || p.status != 'đang xử lý' ?
                                                 p.cart.map((x, index) => (
                                                     <tr key={index} style={{ textAlign: 'center' }}>
-                                                        <td>
-                                                            <img src={x.image} alt="" style={{ width: '70px', height: '50px', objectFit: 'cover', borderRadius: '2px', margin: '5px' }} />
+                                                        <td style={{ textAlign: 'left' }}>
+                                                            <img src={x.image} alt="" style={{ width: '70px', height: '50px', objectFit: 'cover', borderRadius: '2px', margin: '5px', border: '1px solid #aaa' }} />
                                                             {x.name}
                                                         </td>
                                                         <td>
@@ -163,8 +163,8 @@ export const Order = () => {
                                                 :
                                                 p.cart.map((x, index) => (
                                                     <tr key={index} style={{ textAlign: 'center' }}>
-                                                        <td>
-                                                            <img src={x.image} alt="" style={{ width: '70px', height: '50px', objectFit: 'cover', borderRadius: '2px', margin: '5px' }} />
+                                                        <td style={{ textAlign: 'left' }}>
+                                                            <img src={x.image} alt="" style={{ width: '70px', height: '50px', objectFit: 'cover', borderRadius: '2px', margin: '5px', border: '1px solid #aaa' }} />
                                                             {x.name}
                                                         </td>
                                                         <td>

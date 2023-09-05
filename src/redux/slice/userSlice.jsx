@@ -9,8 +9,11 @@ const initialState = {
         phone: false
     },
     allUser: [],
-    admin: []
-    // userCart: [],
+    admin: [],
+    // localUser: {
+    //     username:'',
+    //     password:''
+    // },
     // totalPrice: [],
     // bill: []
 };
@@ -38,6 +41,11 @@ export const userSlice = createSlice({
             state.admin = action.payload
 
         },
+        // getLocalUser: (state, action) => {    
+        //     if(action.payload.length != []){
+        //         state.localUser = action.payload
+        //     }
+        // },
     }
 })
 export const { actions: userAction } = userSlice;

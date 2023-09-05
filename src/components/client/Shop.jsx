@@ -27,7 +27,7 @@ export const Shop = () => {
 
     const vegetableMap = vegetable.length > 0 ? vegetable.map((p, index) =>
         <ItemProduct
-            index={index}
+            key={index}
             name={p.name}
             image={p.image}
             description={p.description}
@@ -42,7 +42,7 @@ export const Shop = () => {
 
     const fruitMap = fruit.length > 0 ? fruit.map((p, index) =>
         <ItemProduct
-            index={index}
+            key={index}
             name={p.name}
             image={p.image}
             description={p.description}
@@ -57,7 +57,7 @@ export const Shop = () => {
 
     const meatMap = meat.length > 0 ? meat.map((p, index) =>
         <ItemProduct
-            index={index}
+            key={index} 
             name={p.name}
             image={p.image}
             description={p.description}
@@ -72,7 +72,7 @@ export const Shop = () => {
 
     const fishMap = fish.length > 0 ? fish.map((p, index) =>
         <ItemProduct
-            index={index}
+            key={index}
             name={p.name}
             image={p.image}
             description={p.description}
@@ -87,7 +87,7 @@ export const Shop = () => {
 
     const frozenMap = frozen.length > 0 ? frozen.map((p, index) =>
         <ItemProduct
-            index={index}
+            key={index}
             name={p.name}
             image={p.image}
             description={p.description}
@@ -102,7 +102,7 @@ export const Shop = () => {
 
     const packagesMap = packages.length > 0 ? packages.map((p, index) =>
         <ItemProduct
-            index={index}
+            key={index}
             name={p.name}
             image={p.image}
             description={p.description}
